@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>2.5.5 增加证券以消减风险</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>04_2.5.5_增加证券以消减风险</h1>
+<pre><code>
+Lecture: 02_投资组合的构建和分析/2.5_证券和投资组合的回报率
+Content: 04_2.5.5_增加证券以消减风险
+
+</code></pre>
+<h3>04 2.5.5 增加证券以消减风险</h3>
+<h4>概述</h4>
+<p>在投资组合管理中，通过增加证券数量来分散风险是一种有效的策略。多样化投资可以显著降低非系统性风险（特定于单一证券的风险），但无法完全消除系统性风险（市场风险）。增加证券数量是实现多样化的一个基本方法。</p>
+<h4>投资组合的方差公式</h4>
+<p>投资组合的方差是其成分证券方差的加权平均和每两种不同的证券之间协方差的加权平均之和。公式如下：
+$$ \sigma_p^2 = \sum_{i=1}^{N} w_i^2 \sigma_i^2 + \sum_{i=1}^{N} \sum_{j \neq i} w_i w_j \text{Cov}(R_i, R_j) $$</p>
+<p>其中：</p>
+<ul>
+<li>$\sigma_p^2$ 表示投资组合的方差</li>
+<li>$w_i$ 和 $w_j$ 分别是证券 $i$ 和 $j$ 在投资组合中的权重</li>
+<li>$\sigma_i^2$ 和 $\sigma_j^2$ 分别是证券 $i$ 和 $j$ 的方差</li>
+<li>$\text{Cov}(R_i, R_j)$ 是证券 $i$ 和 $j$ 之间的协方差。</li>
+</ul>
+<h4>多样化的效果</h4>
+<p>多样化通过降低投资组合中的非系统性风险来减少总风险。其效果取决于证券之间的相关性。假设各证券都是零相关（即协方差为零），则投资组合的方差公式可以简化为：
+$$ \sigma_p^2 = \frac{1}{N} \sigma_i^2 $$</p>
+<p>其中 $N$ 是证券的数量，随着 $N$ 的增加，投资组合的方差趋近于零。因此，通过增加证券数量，可以显著降低投资组合的总体风险。</p>
+<h4>实际应用</h4>
+<p>为了便于说明，假定每个成分证券与其他证券回报率间的协方差都是零，每一证券的方差都相等，并且对每一成分证券的投资都相等。假设在本例中各个成分证券的标准差都是40%，表2-4说明当成分证券数增加时，投资组合的标准差如何变化。</p>
+<table>
+<thead>
+<tr>
+<th>成分证券数</th>
+<th>投资组合的标准差（%）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>40.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>28.3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>14.1</td>
+</tr>
+<tr>
+<td>16</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>32</td>
+<td>7.1</td>
+</tr>
+<tr>
+<td>128</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>510</td>
+<td>1.8</td>
+</tr>
+</tbody>
+</table>
+<p>从表中可以看出，随着成分证券数的增加，投资组合的标准差显著降低。特别要注意的是，单一股票投资组合的标准差是40%，而大型（128个证券组成的）投资组合的标准差却降至3.5%，比单个股票的标准差的一半还要小。</p>
+<h4>多样化的原理</h4>
+<p>对于零相关（协方差为零）的证券，如果成分证券的数目足够大，则投资组合的分析师可以使得投资组合的风险任意小。这一点是保险学的基础，它可以解释为什么保险公司试图出售许多个人保险并拓宽它们的范围以便使总体的风险最小化。在建立评价多样化降低风险对于权益投资者在什么范围内有效的指标时，这一原理也有直接联系。</p>
+<h4>实证研究</h4>
+<p>关于多样化降低投资组合风险的效果问题，学者们已经做了一些研究。其中，Fisher和Lorie的工作可能是对这一过程的最好说明。他们考虑到了全部上市的股票，并从中随机采样组成小到由1只股票大到由500只股票组成的投资组合。投资组合内的股票都是等同加权的。这种模拟过程使得研究者能够观察到投资组合的方差是如何随新成分股票的加入而减少的。同时它还表明了多样化对于降低风险的能力是多么迅速就消失殆尽了。</p>
+<table>
+<thead>
+<tr>
+<th>投资组合的成分股票数</th>
+<th>平均回报率（%）</th>
+<th>标准差（%）</th>
+<th>可消除的风险份额（%）</th>
+<th>与市场有关的风险份额（%）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>9</td>
+<td>40.0</td>
+<td>55</td>
+<td>45</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9</td>
+<td>32.4</td>
+<td>45</td>
+<td>55</td>
+</tr>
+<tr>
+<td>4</td>
+<td>9</td>
+<td>26.0</td>
+<td>35</td>
+<td>65</td>
+</tr>
+<tr>
+<td>8</td>
+<td>9</td>
+<td>22.0</td>
+<td>25</td>
+<td>75</td>
+</tr>
+<tr>
+<td>16</td>
+<td>9</td>
+<td>19.0</td>
+<td>15</td>
+<td>85</td>
+</tr>
+<tr>
+<td>32</td>
+<td>9</td>
+<td>17.0</td>
+<td>10</td>
+<td>90</td>
+</tr>
+<tr>
+<td>64</td>
+<td>9</td>
+<td>16.0</td>
+<td>5</td>
+<td>95</td>
+</tr>
+<tr>
+<td>128</td>
+<td>9</td>
+<td>15.5</td>
+<td>2</td>
+<td>98</td>
+</tr>
+<tr>
+<td>256</td>
+<td>9</td>
+<td>15.2</td>
+<td>1</td>
+<td>99</td>
+</tr>
+<tr>
+<td>500</td>
+<td>9</td>
+<td>15.1</td>
+<td>0</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p>从表中可以看出，随着投资组合中股票数的增加，多样化降低风险的效果逐渐减弱，当投资组合的成分股票数达到128时，投资组合的风险已经基本上等同于市场风险。</p>
+<h4>结论</h4>
+<p>增加证券以消减风险是多样化投资的核心原理之一。通过增加投资组合中的证券数量，可以显著降低非系统性风险，但无法完全消除系统性风险。理解和应用这一原理，对于构建有效的投资组合、实现稳定的投资回报具有重要意义。</p>
+
+    <h3>Python 文件</h3>
+    <pre><code>对应的 Python 文件不存在。</code></pre>
+  </div>
+</body>
+</html>
+  

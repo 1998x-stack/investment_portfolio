@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>2.5.2 投资组合内的风险</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>01_2.5.2_投资组合内的风险</h1>
+<pre><code>
+Lecture: 02_投资组合的构建和分析/2.5_证券和投资组合的回报率
+Content: 01_2.5.2_投资组合内的风险
+
+</code></pre>
+<h3>01 2.5.2 投资组合内的风险</h3>
+<h4>概述</h4>
+<p>在投资组合管理中，投资组合内的风险度量至关重要。单个证券的风险可以通过方差或标准差来衡量，但在一个多元化的投资组合中，需要考虑各个证券之间的协方差和相关系数。投资组合的总风险不仅取决于每个单个证券的风险，还取决于这些证券之间如何共同变化。</p>
+<h4>投资组合的总体风险</h4>
+<p>投资组合的总体风险是各个证券的风险与它们之间协方差的组合。公式如下：
+$$ \sigma_p^2 = \sum_{i=1}^{N}\sum_{j=1}^{N} w_i w_j \sigma_{ij} $$
+其中：</p>
+<ul>
+<li>$\sigma_p^2$ 表示投资组合的方差</li>
+<li>$w_i$ 和 $w_j$ 分别是证券 $i$ 和 $j$ 在投资组合中的权重</li>
+<li>$\sigma_{ij}$ 是证券 $i$ 和 $j$ 之间的协方差</li>
+</ul>
+<h4>协方差的作用</h4>
+<p>协方差是衡量两个证券回报率共同变动程度的指标。它反映了不同证券的回报率如何共同变化，从而影响整个投资组合的风险。协方差可以是正的、负的或零：</p>
+<ul>
+<li><strong>正协方差</strong>：两个证券的回报率同向变化，增加投资组合的整体风险。</li>
+<li><strong>负协方差</strong>：两个证券的回报率反向变化，有助于降低投资组合的整体风险。</li>
+<li><strong>零协方差</strong>：两个证券的回报率变化无关，不影响投资组合的整体风险。</li>
+</ul>
+<h4>相关系数的计算</h4>
+<p>相关系数是协方差的标准化形式，取值范围在-1到1之间，计算公式为：
+$$ \rho_{ij} = \frac{\sigma_{ij}}{\sigma_i \sigma_j} $$
+其中：</p>
+<ul>
+<li>$\rho_{ij}$ 表示证券 $i$ 和 $j$ 之间的相关系数</li>
+<li>$\sigma_i$ 和 $\sigma_j$ 分别是证券 $i$ 和 $j$ 的标准差</li>
+</ul>
+<h4>风险的分解</h4>
+<p>投资组合的风险可以分为系统风险（不可分散风险）和非系统风险（可分散风险）：</p>
+<ul>
+<li><strong>系统风险</strong>：影响整个市场的因素，如经济波动、政治不稳定等。系统风险不能通过多样化来消除。</li>
+<li><strong>非系统风险</strong>：特定于某一公司的因素，如管理层变动、产品召回等。非系统风险可以通过多样化来减少。</li>
+</ul>
+<h4>多样化效应</h4>
+<p>通过多样化投资，可以降低投资组合的非系统风险，但不能完全消除系统风险。当投资组合中的证券数目增加时，非系统风险的影响逐渐减少，而系统风险仍然存在。</p>
+<h5>图2-4：多样化与系统风险</h5>
+<p><img src="https://example.com/image.png" alt="图2-4 多样化与系统风险"></p>
+<p>图2-4说明了随着投资组合中证券数量的增加，总风险如何变化。随着证券数量增加，非系统风险减少，而系统风险保持不变。因此，充分多样化的投资组合其回报率与市场回报率表现出高度正相关性。</p>
+<h4>实际应用</h4>
+<h5>例子：两种证券的投资组合</h5>
+<p>假设有两种证券A和B，其回报率和风险参数如下：</p>
+<table>
+<thead>
+<tr>
+<th>证券</th>
+<th>平均回报率</th>
+<th>标准差</th>
+<th>协方差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>10%</td>
+<td>15%</td>
+<td>0.005</td>
+</tr>
+<tr>
+<td>B</td>
+<td>8%</td>
+<td>12%</td>
+<td>0.005</td>
+</tr>
+</tbody>
+</table>
+<p>我们可以计算这两种证券组成的投资组合的风险和回报率。假设两种证券的权重均为50%（即各占投资组合的50%），则投资组合的预期回报率和标准差计算如下：</p>
+<ol>
+<li>
+<p><strong>预期回报率</strong>：
+$$ E(R_p) = w_A E(R_A) + w_B E(R_B) = 0.5 \times 10% + 0.5 \times 8% = 9% $$</p>
+</li>
+<li>
+<p><strong>投资组合标准差</strong>：
+$$ \sigma_p = \sqrt{w_A^2 \sigma_A^2 + w_B^2 \sigma_B^2 + 2w_Aw_B\sigma_{AB}} $$
+$$ \sigma_p = \sqrt{(0.5^2 \times 15^2) + (0.5^2 \times 12^2) + (2 \times 0.5 \times 0.5 \times 0.005)} \approx 8.29% $$</p>
+</li>
+</ol>
+<p>通过多样化，这个投资组合的风险明显低于任何单一证券的风险。</p>
+<h4>结论</h4>
+<p>投资组合内的风险度量是投资组合管理中的关键步骤。通过理解方差、协方差和相关系数的概念，投资者可以更好地评估和管理投资组合的风险。同时，通过多样化，投资者可以有效降低非系统风险，从而优化投资组合的风险和回报率。</p>
+
+    <h3>Python 文件</h3>
+    <pre><code>对应的 Python 文件不存在。</code></pre>
+  </div>
+</body>
+</html>
+  

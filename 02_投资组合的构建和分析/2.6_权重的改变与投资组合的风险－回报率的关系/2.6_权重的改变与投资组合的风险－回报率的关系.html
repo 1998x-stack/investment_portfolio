@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>2.6 权重的改变与投资组合的风险－回报率的关系</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>2.6_权重的改变与投资组合的风险－回报率的关系</h1>
+<pre><code>
+Lecture: 02_投资组合的构建和分析/2.6_权重的改变与投资组合的风险－回报率的关系
+Content: 2.6_权重的改变与投资组合的风险－回报率的关系
+
+</code></pre>
+<h3>2.6 权重的改变与投资组合的风险－回报率的关系</h3>
+<h4>概述</h4>
+<p>在投资组合管理中，调整成分证券的权重是优化风险和回报的重要手段。通过改变投资组合中各证券的权重，可以实现期望的风险-回报率特性。本文详细分析了如何通过改变权重来影响投资组合的风险和回报率，并提供了相关计算和图示。</p>
+<h4>数据示例</h4>
+<p>为了说明如何通过改变投资组合内成分证券的权重来改变其风险和回报率的特性，我们引入表2-6所列的两种假想股票的数据。表2-6包括每种股票的期望回报率、标准差以及三种不同的相关系数假设。</p>
+<h5>表2-6：假想股票的数据</h5>
+<table>
+<thead>
+<tr>
+<th>股票</th>
+<th>期望回报率 (%)</th>
+<th>标准差 (%)</th>
+<th>相关系数假设</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>15</td>
+<td>24</td>
+<td>+1.00</td>
+</tr>
+<tr>
+<td>B</td>
+<td>12</td>
+<td>18</td>
+<td>+0.50</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p>表2-6还包括不同权重下投资组合的期望回报率和标准差的计算结果。其中，股票A的权重从0%到100%依次递增，股票B的权重相应递减。</p>
+<h5>权重和回报率</h5>
+<p>假设投资组合是全部投资的，股票A的权重为W，股票B的权重为1-W。根据不同的权重配置，可以计算出投资组合的期望回报率和标准差。</p>
+<p><strong>期望回报率的计算公式：</strong>
+$$ E(R_p) = W \cdot E(R_A) + (1 - W) \cdot E(R_B) $$</p>
+<p><strong>标准差的计算公式：</strong>
+$$ \sigma_p = \sqrt{W^2 \cdot \sigma_A^2 + (1 - W)^2 \cdot \sigma_B^2 + 2W(1 - W) \cdot \text{Cov}(A, B)} $$</p>
+<p>其中，$\text{Cov}(A, B)$ 是股票A和股票B的协方差，协方差的计算与相关系数有关：
+$$ \text{Cov}(A, B) = \rho_{AB} \cdot \sigma_A \cdot \sigma_B $$</p>
+<h4>计算结果分析</h4>
+<p>通过不同的相关系数假设（+1.00、+0.50、0.00），我们可以计算出投资组合在不同权重配置下的风险和回报率，并绘制出相应的图表。</p>
+<ol>
+<li>
+<p><strong>完全正相关（$\rho = 1.00$）</strong>：</p>
+<ul>
+<li>在这种情况下，投资组合的风险和回报率呈线性关系。增加股票A的权重，投资组合的期望回报率增加，但风险也增加。</li>
+</ul>
+</li>
+<li>
+<p><strong>部分相关（$\rho = 0.50$）</strong>：</p>
+<ul>
+<li>在这种情况下，投资组合的风险和回报率关系呈曲线。适度增加股票A的权重，可以实现风险和回报率的平衡。</li>
+</ul>
+</li>
+<li>
+<p><strong>零相关（$\rho = 0.00$）</strong>：</p>
+<ul>
+<li>在这种情况下，投资组合的风险显著降低。通过增加股票A的权重，可以在保持较低风险的同时，提高期望回报率。</li>
+</ul>
+</li>
+</ol>
+<h5>图示分析</h5>
+<p>根据表2-6的数据和计算结果，我们可以绘制出不同相关系数假设下投资组合的风险-回报率曲线。图2-5展示了当股票A和B的相关系数分别为1.0、0.5和0.0时，投资组合的期望回报率和标准差的变化轨迹。</p>
+<h4>结论</h4>
+<p>通过调整成分证券的权重，可以优化投资组合的风险和回报率。不同相关系数假设下，投资组合的风险-回报率特性有所不同。理解这些变化，可以帮助投资者根据自身的风险偏好和市场情况，构建最优的投资组合。</p>
+
+    <h3>Python 文件</h3>
+    <pre><code>对应的 Python 文件不存在。</code></pre>
+  </div>
+</body>
+</html>
+  

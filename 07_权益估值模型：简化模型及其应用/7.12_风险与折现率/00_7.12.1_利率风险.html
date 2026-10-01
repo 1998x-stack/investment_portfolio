@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>7.12.1 利率风险</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>00_7.12.1_利率风险</h1>
+<pre><code>
+Lecture: 07_权益估值模型：简化模型及其应用/7.12_风险与折现率
+Content: 00_7.12.1_利率风险
+
+</code></pre>
+<h3>7.12.1 利率风险</h3>
+<h4>概述</h4>
+<p>利率风险是指由于市场利率的变动对证券价格产生的影响。证券的价值是其未来现金流的现值，而折现率中的一个重要组成部分就是市场利率。因此，利率变化会直接影响证券的折现率，从而影响其市场价格。</p>
+<h4>利率风险的基本原理</h4>
+<p>利率风险的基本原理是，当市场利率上升时，证券的现值下降，导致价格下跌；反之，当市场利率下降时，证券的现值上升，导致价格上涨。这种反向关系源于折现公式：
+$$ \text{现值} = \sum \frac{\text{未来现金流}}{(1 + \text{折现率})^t} $$
+折现率中的市场利率变化直接影响到分母，从而影响到现值计算的结果。</p>
+<h4>利率风险的影响因素</h4>
+<ol>
+<li><strong>久期（Duration）</strong>：久期是衡量债券价格对利率变动敏感度的重要指标。久期越长，债券价格对利率变动越敏感。久期不仅考虑到债券的期限，还考虑了中间现金流的时间分布。因此，久期可以看作是加权平均到期时间。</li>
+<li><strong>凸性（Convexity）</strong>：凸性是对久期的进一步修正，衡量利率变化对久期计算的非线性影响。高凸性意味着债券价格对利率变化的响应更加平滑。</li>
+</ol>
+<h4>利率风险的量化</h4>
+<p>为了更好地理解利率风险，我们可以通过久期和凸性来量化这种风险。公式如下：
+$$ \Delta P \approx -D \cdot \Delta y + \frac{1}{2} C \cdot (\Delta y)^2 $$
+其中，$ \Delta P $ 是价格变化，$ D $ 是久期，$ \Delta y $ 是利率变化，$ C $ 是凸性。</p>
+<h4>案例分析</h4>
+<p>假设有两只债券A和B，债券A的久期为5年，债券B的久期为10年。若市场利率上升1%，两只债券价格的预期变化如下：</p>
+<ul>
+<li><strong>债券A</strong>：价格变化 ≈ -5% × 1% = -5%</li>
+<li><strong>债券B</strong>：价格变化 ≈ -10% × 1% = -10%</li>
+</ul>
+<p>通过此案例可以看出，久期较长的债券对利率变化更加敏感，价格变化幅度更大。</p>
+<h4>具体应用</h4>
+<ol>
+<li><strong>短期与长期债券</strong>：短期债券对利率变化的敏感度较低，因此利率风险较小；而长期债券则相反，敏感度高，利率风险大。</li>
+<li><strong>现金等价物</strong>：现金等价物如短期国债，其利率风险最小，适合作为风险规避的工具。</li>
+<li><strong>优先股</strong>：优先股由于无固定到期日，类似于永续年金，其久期相对较长，对利率变化较为敏感。</li>
+</ol>
+<h4>利率风险管理策略</h4>
+<p>为了管理和控制利率风险，投资者和机构通常采用以下几种策略：</p>
+<ol>
+<li><strong>久期匹配（Duration Matching）</strong>：通过将资产和负债的久期匹配，来对冲利率变化的风险。这样，利率变动对资产和负债的影响可以相互抵消。</li>
+<li><strong>免疫策略（Immunization Strategy）</strong>：采用久期匹配的一种形式，确保在利率变化时，投资组合的价值在某一特定时间点上保持不变。</li>
+<li><strong>杠铃策略（Barbell Strategy）</strong>：投资于短期和长期债券的组合，以分散利率风险。</li>
+<li><strong>梯形策略（Ladder Strategy）</strong>：通过构建由不同到期时间的债券组成的投资组合，使得利率风险分散在不同时间段。</li>
+</ol>
+<h3>结论</h3>
+<p>利率风险是影响证券价格的重要因素，尤其对于债券投资者而言更为显著。通过理解久期和凸性等指标，可以更好地量化和管理利率风险。在实际应用中，通过各种投资策略，如久期匹配、免疫策略等，可以有效地控制利率风险，保护投资组合的价值。合理的利率风险管理是实现投资目标、提高投资收益的重要手段。</p>
+<p>这些理论和方法不仅适用于传统债券市场，还广泛应用于各类固定收益证券和权益证券的风险管理中，帮助投资者在复杂多变的市场环境中做出更为科学和明智的投资决策。</p>
+
+    <h3>Python 文件</h3>
+    <pre><code>对应的 Python 文件不存在。</code></pre>
+  </div>
+</body>
+</html>
+  

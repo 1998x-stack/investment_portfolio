@@ -1,0 +1,91 @@
+/* 设置全局样式 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 设置字体 */
+  margin: 0; /* 去除默认外边距 */
+  padding: 0; /* 去除默认内边距 */
+  background: linear-gradient(to right, #f7f7f7, #eaeaea); /* 设置从左到右的渐变背景 */
+  display: flex; /* 使用 flex 布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  min-height: 100vh; /* 最小高度设置为 100vh，即视口高度 */
+  color: #333; /* 设置全局文本颜色 */
+}
+
+/* 设置容器样式 */
+.container {
+  width: 75%; /* 设置容器宽度 */
+  max-width: 85%; /* 设置容器最大宽度 */
+  background: linear-gradient(135deg, #f5f7fa, #eaeaea); /* 设置 135 度的渐变背景 */
+  padding: 20px; /* 设置内边距 */
+  border-radius: 12px; /* 设置圆角 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 设置阴影效果 */
+  text-align: center; /* 文本居中对齐 */
+}
+
+/* 设置不同屏幕尺寸下的容器宽度 */
+@media (max-width: 768px) {
+  .container {
+    width: 75%; /* 在屏幕宽度小于 768px 时，设置容器宽度为 75% */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 90%; /* 在屏幕宽度小于 480px 时，设置容器宽度为 90% */
+  }
+}
+
+/* 设置一级标题样式 */
+h1 {
+  font-size: 2.5rem; /* 设置字体大小 */
+  margin-bottom: 20px; /* 设置下边距 */
+  color: #333; /* 设置字体颜色 */
+}
+
+/* 设置目录树容器样式 */
+.tree-container {
+  text-align: left; /* 文本左对齐 */
+}
+
+/* 设置链接项样式 */
+.link-item {
+  background: linear-gradient(to bottom right, #dcdcdc, #b8b8b8); /* 设置从左上到右下的渐变背景 */
+  color: #222; /* 设置文本颜色 */
+  padding: 50px; /* 设置内边距 */
+  border-radius: 40px; /* 设置圆角 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 设置阴影效果 */
+  text-align: left; /* 文本左对齐 */
+  width: 950px; /* 设置宽度 */
+  height: 10px; /* 设置高度 */
+  display: flex; /* 使用 flex 布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: flex-start; /* 内容从左开始对齐 */
+  margin: 25px auto; /* 设置上下外边距为 25px，并水平居中 */
+  transition: background 0.5s ease; /* 设置背景渐变效果 */
+}
+
+/* 设置链接项的 hover 样式 */
+.link-item:hover {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3); /* 设置 hover 时的渐变背景 */
+}
+
+/* 设置链接样式 */
+.link-item a {
+  color: #222; /* 设置链接颜色 */
+  text-decoration: none; /* 去除下划线 */
+  font-weight: bold; /* 设置字体加粗 */
+  display: block; /* 设置为块级元素 */
+  line-height: 2; /* 设置行高 */
+  font-size: 1.3rem; /* 设置字体大小 */
+  padding-left: 20px; /* 设置左内边距 */
+}
+
+/* 设置链接的 hover 样式 */
+.link-item a:hover {
+  text-decoration: underline; /* 设置 hover 时显示下划线 */
+}
+
+/* 设置已访问链接的颜色 */
+.link-item a:visited {
+  color: #888; /* 设置已访问链接的颜色 */
+}

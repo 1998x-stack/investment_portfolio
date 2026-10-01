@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>3.3.3 实证检验</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>02_3.3.3_实证检验</h1>
+<pre><code>
+Lecture: 03_资本市场理论和投资组合应用分析/3.3_证券市场直线/资本资产定价模型
+Content: 02_3.3.3_实证检验
+
+</code></pre>
+<h3>3.3.3 实证检验 - 深度解析</h3>
+<h4>概述</h4>
+<p>资本资产定价模型（CAPM）通过证券市场直线（SML）描述了资产的预期回报率与其系统风险（贝塔系数）之间的关系。为了验证CAPM的有效性，研究人员进行了大量的实证检验。本文将详细探讨CAPM的实证检验方法、结果及其局限性。</p>
+<h4>实证检验的基本方法</h4>
+<ol>
+<li>
+<p><strong>回归分析</strong>：
+实证检验通常采用回归分析的方法，通过历史数据来估计CAPM中的贝塔系数和预期回报率。</p>
+<ul>
+<li><strong>数据收集</strong>：收集一段时间内的资产回报率和市场回报率数据。</li>
+<li><strong>计算贝塔系数</strong>：对资产的回报率与市场回报率进行回归分析，得到资产的贝塔系数。</li>
+<li><strong>计算预期回报率</strong>：使用CAPM公式计算资产的预期回报率，并与实际回报率进行比较。</li>
+</ul>
+</li>
+<li>
+<p><strong>单指数模型</strong>：
+单指数模型（Single Index Model, SIM）是CAPM的一种简化形式，用于估计资产的系统风险。SIM假设资产回报率仅由市场回报率一个因素决定。</p>
+<ul>
+<li><strong>模型公式</strong>：$$ R_i = \alpha_i + \beta_i R_m + \epsilon_i $$
+其中，$ R_i $ 是资产 $ i $ 的回报率，$ R_m $ 是市场回报率，$ \alpha_i $ 是回归截距，$ \beta_i $ 是贝塔系数，$ \epsilon_i $ 是误差项。</li>
+<li><strong>回归分析</strong>：通过对历史数据进行回归分析，得到资产的 $ \alpha_i $ 和 $ \beta_i $ 值。</li>
+</ul>
+</li>
+</ol>
+<h4>实证检验的步骤</h4>
+<ol>
+<li>
+<p><strong>选择样本数据</strong>：</p>
+<ul>
+<li>选择代表性强的市场指数作为市场组合，例如标准普尔500指数。</li>
+<li>选择不同类型和行业的资产，以确保样本的多样性。</li>
+</ul>
+</li>
+<li>
+<p><strong>计算实际回报率</strong>：</p>
+<ul>
+<li>收集样本资产在一定时期内的实际回报率数据。</li>
+<li>计算每个样本资产的平均实际回报率。</li>
+</ul>
+</li>
+<li>
+<p><strong>估计贝塔系数</strong>：</p>
+<ul>
+<li>使用市场组合的回报率数据，计算每个样本资产的贝塔系数。</li>
+<li>通过回归分析，得到资产的 $ \beta_i $ 值。</li>
+</ul>
+</li>
+<li>
+<p><strong>计算预期回报率</strong>：</p>
+<ul>
+<li>使用CAPM公式计算每个样本资产的预期回报率：
+$$ E(R_i) = R_f + \beta_i (E(R_m) - R_f) $$</li>
+<li>将计算得到的预期回报率与实际回报率进行比较。</li>
+</ul>
+</li>
+<li>
+<p><strong>绘制SML图</strong>：</p>
+<ul>
+<li>将每个样本资产的实际回报率与贝塔系数绘制在图上。</li>
+<li>根据CAPM公式绘制证券市场直线（SML），并比较实际回报率与SML的偏离程度。</li>
+</ul>
+</li>
+</ol>
+<h4>实证检验的结果与分析</h4>
+<ol>
+<li>
+<p><strong>结果分析</strong>：</p>
+<ul>
+<li><strong>线性关系</strong>：实证检验结果通常显示，资产的实际回报率与其贝塔系数之间存在显著的线性关系，符合CAPM的预测。</li>
+<li><strong>高估与低估</strong>：部分资产的实际回报率显著偏离SML，显示出市场中存在高估或低估的现象。</li>
+<li><strong>截距项</strong>：实际回报率与贝塔系数回归直线的截距项可能与无风险利率不符，表明市场中存在其他影响因素。</li>
+</ul>
+</li>
+<li>
+<p><strong>图示解释</strong>：
+图3-6展示了CAPM的经验拟合结果：</p>
+<pre><code>预期回报率 (E(R))
+|
+|                             *
+|                           / 
+|                         /   
+|                       /     
+|                     /  SML
+|                   /
+|                 /
+|               /
+|             /
+|           /
+|         /
+|       /
+|     /
+|   /
+| /
+|/________________________________________ 风险 (β)
+        R_f                      β_m
+</code></pre>
+</li>
+<li>
+<p><strong>经验研究的局限性</strong>：</p>
+<ul>
+<li><strong>数据质量</strong>：历史数据的质量和长度可能影响实证检验的结果。</li>
+<li><strong>市场代表性</strong>：选择的市场组合是否能充分代表整个市场。</li>
+<li><strong>风险溢价变化</strong>：市场风险溢价在不同时间段可能有所变化，影响实证结果的稳定性。</li>
+</ul>
+</li>
+</ol>
+<h4>结论</h4>
+<p>通过大量的实证检验，CAPM在一定程度上得到了验证。尽管存在一些局限性和偏离现象，CAPM依然是一个重要的资产定价模型，为投资者提供了有价值的指导。理解CAPM的实证检验方法和结果，有助于投资者在实际操作中更好地应用这一理论。</p>
+<hr>
+
+    <h3>Python 文件</h3>
+    <pre><code>对应的 Python 文件不存在。</code></pre>
+  </div>
+</body>
+</html>
+  

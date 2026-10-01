@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>2.9.2 生成有效的前沿</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>01_2.9.2_生成有效的前沿</h1>
+<pre><code>
+Lecture: 02_投资组合的构建和分析/2.9_资产配置
+Content: 01_2.9.2_生成有效的前沿
+
+</code></pre>
+<h3>生成有效的前沿 - 深度解析</h3>
+<h4>概述</h4>
+<p>有效前沿（Efficient Frontier）是现代投资组合理论（Modern Portfolio Theory，MPT）中的一个核心概念。它展示了在不同的风险水平下，投资组合所能实现的最大预期回报率。通过理解有效前沿，投资者可以优化其投资组合，以实现风险和回报的最佳平衡。</p>
+<h4>生成有效前沿的步骤</h4>
+<ol>
+<li>
+<p><strong>确定资产类别</strong>：
+首先，选择几类主要的资产类型。在本例中，通常考虑普通股、长期债券和货币市场工具三种主要的资产类型。</p>
+</li>
+<li>
+<p><strong>计算输入参数</strong>：
+对每类资产，计算其历史回报率、方差（衡量风险的标准）以及不同资产间的协方差。这些参数是生成有效前沿的基础。</p>
+</li>
+<li>
+<p><strong>构建投资组合</strong>：
+使用这些输入参数，通过数学规划（如二次优化规划）生成不同组合的投资组合。每个投资组合都有其特定的风险和预期回报率。</p>
+</li>
+<li>
+<p><strong>绘制有效前沿</strong>：
+通过数学优化，计算出在每一特定风险水平下的最佳回报率，并绘制出有效前沿曲线。</p>
+</li>
+</ol>
+<h4>数学原理</h4>
+<p>有效前沿是通过最优化算法实现的，其核心是二次优化模型（Quadratic Optimization Model）。假设我们有 $ n $ 种资产，每种资产的预期回报率分别为 $ E(R_i) $，资产间的协方差矩阵为 $ \Sigma $，资产的权重为 $ w_i $：</p>
+<p>$$ E(R_p) = \sum_{i=1}^{n} w_i E(R_i) $$
+$$ \sigma_p^2 = \sum_{i=1}^{n} \sum_{j=1}^{n} w_i w_j \sigma_{ij} $$</p>
+<p>其中， $ E(R_p) $ 为投资组合的预期回报率， $ \sigma_p^2 $ 为投资组合的方差。</p>
+<p>通过约束条件 $ \sum_{i=1}^{n} w_i = 1 $ 和 $ w_i \geq 0 $，使用拉格朗日乘数法进行优化，求解在不同风险水平下的最优权重组合 $ w_i $。</p>
+<h4>实践应用</h4>
+<ol>
+<li>
+<p><strong>风险-回报权衡</strong>：
+有效前沿上的每一点代表一个投资组合，在相同风险水平下，该组合能实现的最大预期回报率。例如，图2-1展示了包含普通股、长期债券和货币市场工具的投资组合在不同风险水平下的有效前沿。</p>
+</li>
+<li>
+<p><strong>资产配置策略</strong>：
+投资者可以根据自身的风险偏好选择在有效前沿上的一个点。风险厌恶型投资者可能会选择靠近左下角的低风险低回报组合，而风险偏好型投资者则可能会选择右上角的高风险高回报组合。</p>
+</li>
+<li>
+<p><strong>动态调整</strong>：
+市场环境和投资者目标的变化可能会导致有效前沿的移动。因此，定期评估和调整投资组合以保持在有效前沿上是非常重要的。</p>
+</li>
+</ol>
+<h4>举例说明</h4>
+<p>表2-10列出了1926年至1993年间普通股、长期债券和货币市场工具的年回报率、标准差及它们之间的相关性。通过这些历史数据，可以运用数学规划生成投资组合的有效集合。</p>
+<p><strong>表2-10 历史数据示例</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>资产类型</th>
+<th>平均年回报率</th>
+<th>标准差</th>
+<th>协方差（与其他资产）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通股</td>
+<td>10.3%</td>
+<td>20.2%</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>长期债券</td>
+<td>5.0%</td>
+<td>10.1%</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>货币市场工具</td>
+<td>3.7%</td>
+<td>3.0%</td>
+<td>0.2</td>
+</tr>
+</tbody>
+</table>
+<p>通过输入这些数据，可以计算出不同资产组合的风险和回报，并绘制出有效前沿。</p>
+<h4>图示解释</h4>
+<p>图2-7展示了美国资产的有效前沿，图中标明了几个典型的投资组合及其风险-回报特性。图中的每一个点代表一个投资组合，不同点的排列形成了有效前沿。图2-8则展示了某个投资组合的回报率分布密度，用于直观地理解投资组合在不同风险水平下的收益情况。</p>
+<h3>总结</h3>
+<p>生成有效前沿是资产配置中的重要步骤，通过历史数据计算和数学优化，可以得出在不同风险水平下的最佳投资组合。理解并应用有效前沿，投资者可以在控制风险的同时，最大化其投资回报。这一理论不仅在学术界有广泛应用，在实际投资管理中也具有重要指导意义。</p>
+<hr>
+
+    <h3>Python 文件</h3>
+    <pre><code>import numpy as np
+from scipy.optimize import minimize
+from typing import List, Tuple
+
+
+class PortfolioOptimizer:
+    """投资组合优化器类，用于管理和优化投资组合。
+
+    该类使用现代投资组合理论，通过最小化风险或最大化收益来优化投资组合。
+    
+    Attributes:
+        returns (np.ndarray): 每个资产的预期回报率。
+        cov_matrix (np.ndarray): 资产的协方差矩阵。
+    """
+
+    def __init__(self, returns: np.ndarray, cov_matrix: np.ndarray) -> None:
+        """
+        初始化 PortfolioOptimizer 实例。
+
+        Args:
+            returns (np.ndarray): 每个资产的预期回报率。
+            cov_matrix (np.ndarray): 资产的协方差矩阵。
+        """
+        self.returns = returns
+        self.cov_matrix = cov_matrix
+
+    def portfolio_performance(self, weights: np.ndarray) -> Tuple[float, float]:
+        """
+        计算投资组合的预期回报率和风险（标准差）。
+
+        Args:
+            weights (np.ndarray): 投资组合中每个资产的权重。
+
+        Returns:
+            Tuple[float, float]: 投资组合的预期回报率和风险。
+        """
+        expected_return = np.dot(weights, self.returns)
+        expected_risk = np.sqrt(np.dot(weights.T, np.dot(self.cov_matrix, weights)))
+        return expected_return, expected_risk
+
+    def minimize_risk(self, target_return: float) -> np.ndarray:
+        """
+        在给定目标回报率下，最小化投资组合的风险。
+
+        Args:
+            target_return (float): 目标回报率。
+
+        Returns:
+            np.ndarray: 最优投资组合的权重。
+        """
+        num_assets = len(self.returns)
+        args = (self.returns, self.cov_matrix)
+
+        def risk(weights: np.ndarray, returns: np.ndarray, cov_matrix: np.ndarray) -> float:
+            return np.sqrt(np.dot(weights.T, np.dot(cov_matrix, weights)))
+
+        constraints = ({'type': 'eq', 'fun': lambda weights: np.dot(weights, returns) - target_return},
+                       {'type': 'eq', 'fun': lambda weights: np.sum(weights) - 1})
+        bounds = tuple((0, 1) for _ in range(num_assets))
+        initial_guess = num_assets * [1. / num_assets]
+
+        result = minimize(risk, initial_guess, args=args, method='SLSQP', bounds=bounds, constraints=constraints)
+        return result.x
+
+    def maximize_return(self, risk_tolerance: float) -> np.ndarray:
+        """
+        在给定风险容忍度下，最大化投资组合的回报率。
+
+        Args:
+            risk_tolerance (float): 风险容忍度（风险的最大值）。
+
+        Returns:
+            np.ndarray: 最优投资组合的权重。
+        """
+        num_assets = len(self.returns)
+        args = (self.returns, self.cov_matrix)
+
+        def neg_return(weights: np.ndarray, returns: np.ndarray) -> float:
+            return -np.dot(weights, returns)
+
+        constraints = ({'type': 'eq', 'fun': lambda weights: np.sum(weights) - 1},
+                       {'type': 'ineq', 'fun': lambda weights: risk_tolerance - np.sqrt(np.dot(weights.T, np.dot(self.cov_matrix, weights)))})
+        bounds = tuple((0, 1) for _ in range(num_assets))
+        initial_guess = num_assets * [1. / num_assets]
+
+        result = minimize(neg_return, initial_guess, args=(self.returns,), method='SLSQP', bounds=bounds, constraints=constraints)
+        return result.x
+
+    def display_portfolio(self, weights: np.ndarray) -> None:
+        """
+        打印投资组合的详细信息。
+
+        Args:
+            weights (np.ndarray): 投资组合中每个资产的权重。
+        """
+        expected_return, expected_risk = self.portfolio_performance(weights)
+        print(f"投资组合权重: {weights}")
+        print(f"预期回报率: {expected_return:.2f}")
+        print(f"风险 (标准差): {expected_risk:.2f}")
+
+# 示例数据
+returns = np.array([0.12, 0.10, 0.15, 0.09])
+cov_matrix = np.array([
+    [0.005, -0.010, 0.004, -0.002],
+    [-0.010, 0.040, -0.002, 0.004],
+    [0.004, -0.002, 0.023, 0.002],
+    [-0.002, 0.004, 0.002, 0.012]
+])
+
+# 创建 PortfolioOptimizer 实例
+optimizer = PortfolioOptimizer(returns, cov_matrix)
+
+# 目标回报率下最小化风险
+target_return = 0.10
+weights_min_risk = optimizer.minimize_risk(target_return)
+optimizer.display_portfolio(weights_min_risk)
+
+# 风险容忍度下最大化回报率
+risk_tolerance = 0.15
+weights_max_return = optimizer.maximize_return(risk_tolerance)
+optimizer.display_portfolio(weights_max_return)</code></pre>
+  </div>
+</body>
+</html>
+  

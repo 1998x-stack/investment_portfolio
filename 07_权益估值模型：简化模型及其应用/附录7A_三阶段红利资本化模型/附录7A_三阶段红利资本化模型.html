@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>附录7A 三阶段红利资本化模型</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>附录7A_三阶段红利资本化模型</h1>
+<pre><code>
+Lecture: 07_权益估值模型：简化模型及其应用/附录7A_三阶段红利资本化模型
+Content: 附录7A_三阶段红利资本化模型
+
+</code></pre>
+<h3>附录7A 三阶段红利资本化模型</h3>
+<h4>概述</h4>
+<p>三阶段红利资本化模型由Molodovsky、May和Chottiner发展，是红利折现模型的复杂版本，用于更准确地反映公司的红利增长过程和估值。相比于两阶段模型，三阶段模型考虑了公司从高增长阶段过渡到稳定增长阶段的中间过渡阶段，更符合实际情况。</p>
+<h4>模型原理</h4>
+<p>三阶段红利资本化模型假设公司经历三个阶段的红利增长：</p>
+<ol>
+<li><strong>第一阶段：高速增长阶段</strong>。公司红利以较高的增长率增长，此阶段通常持续5年。</li>
+<li><strong>第二阶段：过渡阶段</strong>。红利增长率逐渐从高速增长向长期稳定增长过渡，持续时间可能为5到20年。</li>
+<li><strong>第三阶段：稳定增长阶段</strong>。公司红利增长率达到行业平均水平，维持稳定增长。</li>
+</ol>
+<h4>数学公式</h4>
+<p>三阶段红利资本化模型的公式较为复杂，分三个阶段计算红利的现值，然后加总得到股票的理论价格。公式如下：
+$$ \text{价格} = V_1 + V_2 + V_3 $$
+其中，$ V_1 $、$ V_2 $和$ V_3 $分别代表三个阶段的红利现值。</p>
+<h5>第一阶段</h5>
+<p>第一阶段的现值计算公式为：
+$$ V_1 = \sum_{t=1}^{N_g} \frac{D_0(1+g)^t}{(1+k)^t} $$
+其中，$ N_g $为第一阶段的持续时间，$ g $为高速增长率，$ D_0 $为初始红利，$ k $为折现率。</p>
+<h5>第二阶段</h5>
+<p>第二阶段的现值计算公式为：
+$$ V_2 = \sum_{t=1}^{N_d} \frac{D_{N_g}(1+g_s) \left( 1 - \frac{t}{N_d} \right)}{(1+k)^{N_g+t}} $$
+其中，$ N_d $为第二阶段的持续时间，$ g_s $为稳定增长率。</p>
+<h5>第三阶段</h5>
+<p>第三阶段的现值计算公式为：
+$$ V_3 = \frac{D_{N_g+N_d}(1+g_s)}{k - g_s} \cdot \frac{1}{(1+k)^{N_g+N_d}} $$</p>
+<h4>实际应用</h4>
+<p>三阶段红利资本化模型在实际应用中，通过三个阶段的详细计算，可以较为准确地估算股票的内在价值。以下是具体应用步骤：</p>
+<ol>
+<li>
+<p><strong>数据收集与预测</strong>：收集公司的历史红利数据，预测未来的红利增长率。对于第一阶段，通常需要公司的详细财务计划和增长预期。第二阶段的增长率逐年递减，直到达到长期稳定增长率。第三阶段采用行业平均增长率。</p>
+</li>
+<li>
+<p><strong>现值计算</strong>：分别计算每个阶段的红利现值，并将其加总，得到股票的理论价格。</p>
+</li>
+<li>
+<p><strong>敏感性分析</strong>：由于模型对输入数据（如增长率和折现率）敏感，需进行敏感性分析，评估不同假设对股票估值的影响。</p>
+</li>
+</ol>
+<h4>优缺点</h4>
+<p>三阶段红利资本化模型的优点在于其精细度高，能够反映公司红利增长的实际情况，适用于各类公司特别是高增长公司。然而，其缺点在于模型复杂，数据输入量大，对数据的准确性要求高，且计算过程繁琐。</p>
+<h4>案例分析</h4>
+<p>书中提供了详细的案例，通过假设初始红利为1美元，分别计算了三个阶段的红利现值，最后得出股票的总价值。例如，某公司第一阶段5年的高速增长率为20%，第二阶段10年增长率线性递减至10%，第三阶段为长期稳定的10%。通过公式计算，得出股票的理论价格为33美元。</p>
+<h4>结论</h4>
+<p>三阶段红利资本化模型在股票估值中提供了一个精细且实用的方法，适用于需要详细反映公司成长过程的估值情况。尽管其复杂性和数据需求较高，但通过精确的预测和计算，投资者能够得到更为准确的股票内在价值估算，为投资决策提供重要参考。</p>
+
+    <h3>Python 文件</h3>
+    <pre><code>对应的 Python 文件不存在。</code></pre>
+  </div>
+</body>
+</html>
+  

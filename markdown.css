@@ -1,0 +1,256 @@
+/* 设置全局的基本样式，包括字体、背景、对齐方式等 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 设置字体族，优先选择系统字体 */
+  margin: 0; /* 清除默认的外边距 */
+  padding: 0; /* 清除默认的内边距 */
+  background: linear-gradient(to right, #f2f2f2, #e6e6e6); /* 设置背景为从左到右的线性渐变色 */
+  display: flex; /* 使用 flex 布局，使内容居中对齐 */
+  justify-content: center; /* 水平居中对齐内容 */
+  align-items: center; /* 垂直居中对齐内容 */
+  min-height: 100vh; /* 设置最小高度为 100% 视口高度 */
+  color: #333; /* 设置全局字体颜色为深灰色 */
+}
+
+/* 设置容器的样式，包括宽度、背景、边距、边框、阴影等 */
+.container {
+  width: 60%; /* 设置容器宽度为 65% */
+  max-width: 85%; /* 设置容器的最大宽度为 85% */
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* 设置背景为 135 度的线性渐变色 */
+  padding: 30px; /* 设置内边距为 30px */
+  border-radius: 15px; /* 设置边框圆角半径为 15px */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* 设置阴影，偏移量为 10px 和 20px，颜色为黑色透明 */
+  text-align: left; /* 设置文本左对齐 */
+  overflow-wrap: break-word; /* 防止长单词或 URL 溢出容器 */
+  line-height: 1.8; /* 增加行距，使文本更易读 */
+  font-size: 1.1em; /* 增加全局字体大小 */
+}
+
+/* 针对屏幕宽度小于 768px 的设备的样式 */
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* 调整容器宽度为 90% */
+  }
+}
+
+/* 针对屏幕宽度小于 480px 的设备的样式 */
+@media (max-width: 480px) {
+  .container {
+    width: 95%; /* 调整容器宽度为 95% */
+  }
+}
+
+/* 设置标题的样式，包括颜色、下边距和鼠标悬停效果 */
+h1 {
+  font-size: 2em; /* 设置 h1 字体大小 */
+  color: #444; /* 设置标题颜色为深灰色 */
+  margin-bottom: 1rem; /* 设置标题下边距为 1rem */
+  cursor: pointer; /* 鼠标悬停时显示为指针，增加交互性 */
+  transition: color 0.3s ease; /* 增加颜色渐变效果 */
+}
+h2 {
+  font-size: 1.75em; /* 设置 h2 字体大小 */
+  color: #444; /* 设置标题颜色为深灰色 */
+  margin-bottom: 1rem; /* 设置标题下边距为 1rem */
+  cursor: pointer; /* 鼠标悬停时显示为指针，增加交互性 */
+  transition: color 0.3s ease; /* 增加颜色渐变效果 */
+}
+h3 {
+  font-size: 1.5em; /* 设置 h3 字体大小 */
+  color: #444; /* 设置标题颜色为深灰色 */
+  margin-bottom: 1rem; /* 设置标题下边距为 1rem */
+  cursor: pointer; /* 鼠标悬停时显示为指针，增加交互性 */
+  transition: color 0.3s ease; /* 增加颜色渐变效果 */
+}
+h4 {
+  font-size: 1.25em; /* 设置 h4 字体大小 */
+  color: #444; /* 设置标题颜色为深灰色 */
+  margin-bottom: 1rem; /* 设置标题下边距为 1rem */
+  cursor: pointer; /* 鼠标悬停时显示为指针，增加交互性 */
+  transition: color 0.3s ease; /* 增加颜色渐变效果 */
+}
+h5 {
+  font-size: 1.1em; /* 设置 h5 字体大小 */
+  color: #444; /* 设置标题颜色为深灰色 */
+  margin-bottom: 1rem; /* 设置标题下边距为 1rem */
+  cursor: pointer; /* 鼠标悬停时显示为指针，增加交互性 */
+  transition: color 0.3s ease; /* 增加颜色渐变效果 */
+}
+h6 {
+  font-size: 1em; /* 设置 h6 字体大小 */
+  color: #444; /* 设置标题颜色为深灰色 */
+  margin-bottom: 1rem; /* 设置标题下边距为 1rem */
+  cursor: pointer; /* 鼠标悬停时显示为指针，增加交互性 */
+  transition: color 0.3s ease; /* 增加颜色渐变效果 */
+}
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+  color: #007BFF; /* 悬停时改变标题颜色 */
+}
+
+/* 设置段落的样式 */
+p {
+  line-height: 1.8; /* 增加行距，使文本更易读 */
+  margin-bottom: 1.1rem; /* 设置段落下边距为 1rem */
+  transition: transform 0.3s ease; /* 增加平移效果 */
+}
+p:hover {
+  transform: translateX(10px); /* 悬停时平移段落 */
+}
+
+/* 设置无序列表的样式 */
+li {
+  margin-bottom: 0.5rem; /* 设置列表项下边距为 0.5rem */
+  transition: transform 0.3s ease; /* 增加平移效果 */
+}
+li:hover {
+  transform: translateX(10px); /* 悬停时平移列表 */
+}
+
+/* 设置内联代码的样式 */
+code {
+  background-color: #000000; /* 设置背景颜色为黑色 */
+  padding: 2px 4px; /* 设置内边距为 2px 上下，4px 左右 */
+  border-radius: 4px; /* 设置边框圆角半径为 4px */
+  font-size: 1.1em; /* 设置字体大小为 1.1 倍 */
+  color: #ffffff; /* 设置默认字体颜色为白色 */
+}
+
+.hljs-keyword {
+  color: #FF79C6; /* 关键字颜色 */
+}
+
+.hljs-string {
+  color: #50FA7B; /* 字符串颜色 */
+}
+
+.hljs-function {
+  color: #BD93F9; /* 函数名颜色 */
+}
+
+.hljs-comment {
+  color: #6272A4; /* 注释颜色 */
+}
+
+.hljs-class {
+  color: #FFD700; /* 类名颜色 */
+}
+
+/* 其他常见的 Python 代码元素 */
+.hljs-number {
+  color: #F1FA8C; /* 数字颜色 */
+}
+
+.hljs-operator {
+  color: #FFB86C; /* 操作符颜色 */
+}
+
+.hljs-variable {
+  color: #8BE9FD; /* 变量颜色 */
+}
+
+.hljs-attribute {
+  color: #FF79C6; /* 属性颜色 */
+}
+
+.hljs-title {
+  color: #8BE9FD; /* 标题颜色 */
+}
+
+/* 设置代码块的样式 */
+pre code {
+  background-color: #000000; /* 设置背景颜色为黑色 */
+  display: block; /* 设置为块级元素 */
+  padding: 1rem; /* 设置内边距为 1rem */
+  overflow-x: auto; /* 水平滚动，防止代码超出容器 */
+}
+
+/* 设置数学公式的样式 */
+.math {
+  display: block; /* 设置为块级元素 */
+  text-align: center; /* 设置文本居中对齐 */
+  margin: 1rem 0; /* 设置上下边距为 1rem */
+  font-size: 1.0em; /* 设置字体大小为 1.2 倍 */
+  font-family: 'STIX Two Math', serif; /* 使用 STIX Two Math 字体族，专为数学公式设计 */
+}
+
+.comment-input-container {
+  position: absolute;
+  right: -300px; /* 调整这个值来确定输入框与段落的距离 */
+  top: 0;
+}
+
+.comment-input {
+  display: block; /* 设置为块级元素 */
+  margin-top: 0.5rem; /* 设置上边距 */
+  padding: 0.5rem; /* 设置内边距 */
+  width: 250px; /* 设置输入框的宽度 */
+  font-size: 1em; /* 设置字体大小 */
+  border: 1px solid #ccc; /* 设置边框 */
+  border-radius: 4px; /* 设置边框圆角 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 设置阴影 */
+  background-color: white; /* 设置背景颜色 */
+}
+
+.comment {
+  display: block; /* 设置为块级元素 */
+  margin-top: 0.5rem; /* 设置评论框的上边距 */
+  padding: 0.5rem; /* 设置评论框的内边距 */
+  background-color: #e0f7fa; /* 设置评论框的背景颜色 */
+  border-left: 3px solid #007BFF; /* 设置评论框的左边框 */
+  font-size: 0.9em; /* 设置评论框的字体大小 */
+  color: #007BFF; /* 设置评论框的字体颜色 */
+}
+
+.save-button {
+  position: fixed; /* 固定位置 */
+  bottom: 20px; /* 距离底部 20px */
+  right: 20px; /* 距离右侧 20px */
+  padding: 10px 20px; /* 内边距 */
+  font-size: 1em; /* 字体大小 */
+  background-color: #007BFF; /* 背景颜色 */
+  color: white; /* 字体颜色 */
+  border: none; /* 无边框 */
+  border-radius: 5px; /* 圆角 */
+  cursor: pointer; /* 鼠标指针 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 阴影 */
+  transition: background-color 0.3s; /* 过渡效果 */
+}
+
+.save-button:hover {
+  background-color: #0056b3; /* 悬停时背景颜色 */
+}
+
+/* 设置表格样式 */
+table {
+  width: 100%; /* 表格宽度 */
+  border-collapse: collapse; /* 去除边框间的空隙 */
+  margin-bottom: 1rem; /* 下边距 */
+  border-radius: 12px; /* 表格圆角 */
+  overflow: hidden; /* 隐藏超出圆角的内容 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+/* 表头和单元格样式 */
+th, td {
+  padding: 0.75rem; /* 单元格内边距 */
+  border: 1px solid #e1e4e8; /* 单元格边框 */
+  text-align: left; /* 左对齐文本 */
+  transition: background-color 0.3s, box-shadow 0.3s; /* 动态效果 */
+}
+
+/* 表头样式 */
+th {
+  background-color: #f5f5f7; /* 表头背景颜色 */
+  color: #333; /* 表头文本颜色 */
+  font-weight: bold; /* 表头字体加粗 */
+}
+
+/* 行悬停效果 */
+tbody tr:hover {
+  background-color: #f1f1f1; /* 行悬停背景颜色 */
+}
+
+/* 单元格悬停效果 */
+td:hover {
+  background-color: #f9f9f9; /* 单元格悬停背景颜色 */
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* 添加内阴影效果 */
+}

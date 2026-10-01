@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>2.9.1 资产类型的风险－回报率特性</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>00_2.9.1_资产类型的风险－回报率特性</h1>
+<pre><code>
+Lecture: 02_投资组合的构建和分析/2.9_资产配置
+Content: 00_2.9.1_资产类型的风险－回报率特性
+
+</code></pre>
+<h3>2.9.1 资产类型的风险－回报率特性</h3>
+<h4>概述</h4>
+<p>在投资组合管理中，了解不同资产类型的风险和回报率特性对于构建和优化投资组合至关重要。各类资产的风险和回报率特性可以通过历史数据和经济模型进行估算和预测。这些信息有助于投资者评估不同资产在各种经济情景中的表现，从而做出更为明智的投资决策。</p>
+<h4>资产类型的分类</h4>
+<p>常见的资产类型包括普通股股票、长期债券和短期货币市场工具（如国库券）。这些资产类型在风险和回报率特性上存在显著差异。表2-12展示了四种主要资产类型的风险和回报率数据。</p>
+<h5>表2-12：四种资产类型的风险 -回报率数据</h5>
+<table>
+<thead>
+<tr>
+<th>资产类型</th>
+<th>回报平均值 (%)</th>
+<th>标准差 (%)</th>
+<th>相关系数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>国际股票</td>
+<td>15.5</td>
+<td>30.3</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>U.S.股票</td>
+<td>12.3</td>
+<td>20.5</td>
+<td>0.56</td>
+</tr>
+<tr>
+<td>长期债券</td>
+<td>5.4</td>
+<td>8.7</td>
+<td>0.14</td>
+</tr>
+<tr>
+<td>国库券</td>
+<td>3.7</td>
+<td>3.3</td>
+<td>0.24</td>
+</tr>
+</tbody>
+</table>
+<p>这些数据表明，国际股票和U.S.股票的回报率较高，但伴随着较高的风险（标准差较大），而长期债券和国库券的回报率较低，但风险也较低。</p>
+<h4>风险与回报率的关系</h4>
+<p>资产的回报率与其风险通常呈正相关关系，即高回报伴随着高风险。为了衡量这一关系，可以计算各类资产的历史回报率和标准差。例如，普通股股票的历史回报率为10.3%，标准差为20.5%；而国库券的历史回报率为3.7%，标准差为3.3%。这种关系在图2-11中得到了体现，展示了不同资产生成的投资组合的有效前沿。</p>
+<h4>实证研究</h4>
+<p>一些研究者已经计算了各种资产类型在不同历史时期的回报率和风险。例如，Ibbotson和Sinquefield计算了国库券、长期政府债券、公司债券和普通股股票的回报率和标准差。他们的研究显示，普通股股票在过去各个时期内表现出最高的回报率和风险，而国库券的回报率和风险最低。</p>
+<h5>表2-9：实现的回报率、通货膨胀率、实际回报率和风险增溢（1926-1993年）</h5>
+<table>
+<thead>
+<tr>
+<th>资产类型</th>
+<th>名义回报率 (%)</th>
+<th>实际回报率 (%)</th>
+<th>流动性增溢 (%)</th>
+<th>违约增溢 (%)</th>
+<th>风险增溢 (%)</th>
+<th>标准差 (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通股</td>
+<td>10.3</td>
+<td>7.2</td>
+<td>-</td>
+<td>-</td>
+<td>6.6</td>
+<td>20.5</td>
+</tr>
+<tr>
+<td>长期公司债券</td>
+<td>5.6</td>
+<td>2.5</td>
+<td>-</td>
+<td>0.6</td>
+<td>-</td>
+<td>8.4</td>
+</tr>
+<tr>
+<td>长期政府债券</td>
+<td>5.0</td>
+<td>1.9</td>
+<td>1.3</td>
+<td>-</td>
+<td>-</td>
+<td>8.7</td>
+</tr>
+<tr>
+<td>国库券</td>
+<td>3.7</td>
+<td>0.6</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>3.3</td>
+</tr>
+</tbody>
+</table>
+<p>这些数据进一步验证了不同资产类型在风险和回报率上的差异。</p>
+<h4>风险和回报率的估算方法</h4>
+<ol>
+<li><strong>历史数据法</strong>：利用历史数据计算各类资产的回报率和风险。假设未来的风险和回报率特性与过去相似。</li>
+<li><strong>情景分析法</strong>：建立不同的经济情景，估计各情景下的回报率和风险。这种方法适用于中长期投资规划。</li>
+<li><strong>市场数据法</strong>：利用当前市场数据和经济指标，预测未来的回报率和风险。</li>
+</ol>
+<h4>结论</h4>
+<p>了解和分析不同资产类型的风险和回报率特性是构建有效投资组合的基础。通过历史数据和经济模型，投资者可以评估各类资产在不同经济情景中的表现，从而优化投资组合，最大化回报率并最小化风险。</p>
+
+    <h3>Python 文件</h3>
+    <pre><code>对应的 Python 文件不存在。</code></pre>
+  </div>
+</body>
+</html>
+  

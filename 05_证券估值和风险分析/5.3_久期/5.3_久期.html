@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>5.3 久期</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>5.3_久期</h1>
+<pre><code>
+Lecture: 05_证券估值和风险分析/5.3_久期
+Content: 5.3_久期
+
+</code></pre>
+<h3>5.3 久期</h3>
+<h4>概述</h4>
+<p>久期（Duration）是债券分析中一个关键的衡量工具，用于评估债券价格对利率变动的敏感性。久期不仅有助于理解和管理利率风险，还能为投资组合的优化提供理论支持。</p>
+<h4>久期的定义及计算</h4>
+<p>久期的定义为债券现金流的加权平均时间，是衡量债券价格对利率变化敏感度的工具。久期的基本计算公式如下：</p>
+<p>$$ D = \frac{\sum_{t=1}^{T} \frac{t \cdot CF_t}{(1+y)^t}}{P} $$</p>
+<p>其中：</p>
+<ul>
+<li>$ D $ 是久期。</li>
+<li>$ CF_t $ 是第 $ t $ 期的现金流。</li>
+<li>$ y $ 是到期收益率（YTM）。</li>
+<li>$ P $ 是债券的现值或价格。</li>
+<li>$ T $ 是到期时间。</li>
+</ul>
+<h4>久期的类型</h4>
+<ol>
+<li><strong>麦考利久期（Macaulay Duration）</strong>：这是最常用的久期衡量方法，反映了债券现金流的加权平均时间。公式如下：</li>
+</ol>
+<p>$$ D_M = \frac{\sum_{t=1}^{T} \frac{t \cdot C}{(1+r)^t} + \frac{T \cdot F}{(1+r)^T}}{P} $$</p>
+<p>其中 $ C $ 是每期的票息， $ F $ 是面值， $ r $ 是折现率或到期收益率。</p>
+<ol start="2">
+<li><strong>修正久期（Modified Duration）</strong>：修正久期考虑了到期收益率的影响，公式如下：</li>
+</ol>
+<p>$$ D_M = \frac{D}{1+y} $$</p>
+<p>修正久期用于衡量债券价格对小幅利率变化的敏感度。</p>
+<ol start="3">
+<li><strong>有效久期（Effective Duration）</strong>：有效久期考虑了嵌入期权对债券价格的影响，适用于有嵌入期权的债券，如可赎回债券。</li>
+</ol>
+<h4>实际应用及案例分析</h4>
+<ol>
+<li>
+<p><strong>利率变化对债券价格的影响</strong>：假设某债券的久期为5年，当前市场利率为4%，如果市场利率上升1%，债券价格的变动可以通过久期计算得出，价格下降约5%。</p>
+</li>
+<li>
+<p><strong>投资组合的利率风险管理</strong>：通过计算投资组合中每只债券的久期，可以求出整个投资组合的久期，从而评估和管理利率风险。例如，若一个投资组合的久期为7年，市场利率上升1%，则整个组合的价格预计下降约7%。</p>
+</li>
+<li>
+<p><strong>债券的凸性（Convexity）</strong>：凸性是对久期的补充，考虑了利率变化的非线性效应。具体公式如下：</p>
+</li>
+</ol>
+<p>$$ C = \frac{1}{P} \sum_{t=1}^{T} \frac{t(t+1) \cdot CF_t}{(1+y)^{t+2}} $$</p>
+<p>高凸性的债券在利率变化时，价格波动较小。凸性修正公式为：</p>
+<p>$$ \Delta P \approx -D \cdot \Delta y + \frac{1}{2} C (\Delta y)^2 $$</p>
+<p>这意味着，在较大幅度的利率变化下，凸性提供了更精确的风险评估。</p>
+<h4>关键分析点</h4>
+<ol>
+<li>
+<p><strong>久期的局限性</strong>：虽然久期是评估利率风险的重要工具，但它假设利率变化幅度较小且为线性关系。在实际应用中，较大幅度的利率变化需要结合凸性进行修正。</p>
+</li>
+<li>
+<p><strong>投资策略的应用</strong>：通过久期匹配策略（Duration Matching），投资者可以构建一个久期与负债久期相匹配的投资组合，从而对冲利率风险。此外，免疫策略（Immunization Strategy）也利用久期和凸性，确保投资组合的现金流与负债现金流匹配，在利率变化时仍能实现预期收益。</p>
+</li>
+</ol>
+<h3>总结</h3>
+<p>5.3节对久期的详细分析，强调了其在评估和管理利率风险中的重要性。通过理解久期的定义、计算方法及其实际应用，投资者可以更好地预测债券价格波动，优化投资组合，降低利率风险。这些知识不仅在债券市场中具有重要意义，还为其他金融工具的风险管理提供了理论支持。</p>
+
+    <h3>Python 文件</h3>
+    <pre><code>对应的 Python 文件不存在。</code></pre>
+  </div>
+</body>
+</html>
+  

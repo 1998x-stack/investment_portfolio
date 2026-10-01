@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>7.12.2 购买力风险</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>01_7.12.2_购买力风险</h1>
+<pre><code>
+Lecture: 07_权益估值模型：简化模型及其应用/7.12_风险与折现率
+Content: 01_7.12.2_购买力风险
+
+</code></pre>
+<h3>7.12.2 购买力风险</h3>
+<h4>概述</h4>
+<p>购买力风险（Purchasing Power Risk）是指由于通货膨胀导致实际回报率下降的风险。当通货膨胀上升时，投资者的名义收益虽然没有变化，但其实际购买力会下降。这种风险对固定收益证券如债券和优先股的影响尤为显著，因为这些证券的现金流是固定的，无法根据通货膨胀进行调整。</p>
+<h4>购买力风险的原理</h4>
+<p>购买力风险的基本原理在于名义回报和实际回报的区别。名义回报率包括了补偿通货膨胀的部分，而实际回报率则是扣除通货膨胀后的回报。公式如下：
+$$ \text{实际回报率} = \frac{1 + \text{名义回报率}}{1 + \text{通货膨胀率}} - 1 $$
+当通货膨胀率上升时，实际回报率会下降，甚至可能为负，导致投资者的实际收益减少。</p>
+<h4>对固定收益证券的影响</h4>
+<p>固定收益证券，如债券和优先股，由于其现金流是固定的，在通货膨胀上升时无法调整，因此其购买力风险较高。例如，当通货膨胀率为3%时，一只名义回报率为5%的债券，其实际回报率约为1.94%，明显低于名义回报率。</p>
+<h4>案例分析</h4>
+<p>书中通过表格5-16展示了不同类型债券所承受的购买力风险：</p>
+<ul>
+<li><strong>国库券</strong>：购买力风险较低，因为其期限短，受到通货膨胀影响较小。</li>
+<li><strong>长期政府债券</strong>：购买力风险较高，因为其期限长，固定利率在高通胀期间会导致实际回报显著下降。</li>
+<li><strong>AAA级公司债券</strong>：购买力风险中等，因为尽管期限长，但其利率可能较高，部分抵消通货膨胀的影响。</li>
+<li><strong>高收益债券（垃圾债券）</strong>：购买力风险较高，因为尽管其票息高，但高通胀会大幅削减实际收益。</li>
+</ul>
+<h4>量化购买力风险</h4>
+<p>购买力风险可以通过名义回报率与通货膨胀率的差额来量化。例如，如果债券的名义回报率为6%，而预期通货膨胀率为4%，则实际回报率约为1.92%。这种计算有助于投资者在通货膨胀环境下评估投资的实际收益。</p>
+<h4>对投资组合的影响</h4>
+<p>投资组合中的不同证券对购买力风险的敏感性不同，投资者应根据市场预期的通货膨胀率调整投资组合。例如，在高通胀预期下，投资者可以增加对抗通胀能力较强的资产，如股票和房地产的配置，减少固定收益证券的比例。</p>
+<h4>管理购买力风险的策略</h4>
+<ol>
+<li><strong>通胀保值债券</strong>：如美国的TIPS（通货膨胀保值债券），其本金和利息与通货膨胀挂钩，能够有效对冲通货膨胀风险。</li>
+<li><strong>多样化投资</strong>：通过投资多种资产类别，如股票、房地产和商品等，对冲单一资产类别的通货膨胀风险。</li>
+<li><strong>调整投资期限</strong>：在高通胀环境下，投资者可以选择短期债券，减少长期债券的持有比例，以降低购买力风险。</li>
+<li><strong>收益再投资</strong>：将收益再投资于高回报率资产，部分抵消通货膨胀对实际回报的侵蚀。</li>
+</ol>
+<h4>结论</h4>
+<p>购买力风险是影响投资实际回报的重要因素，特别是对固定收益证券而言。在投资决策中，投资者应充分考虑通货膨胀对实际回报的影响，通过多样化投资、选择通胀保值工具和调整投资期限等策略，有效管理和对冲购买力风险。只有这样，才能在复杂的经济环境中保持投资组合的稳定和增长。</p>
+
+    <h3>Python 文件</h3>
+    <pre><code>对应的 Python 文件不存在。</code></pre>
+  </div>
+</body>
+</html>
+  

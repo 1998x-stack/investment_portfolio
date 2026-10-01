@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <title>2.8 模型要求的输入</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+  <link rel="stylesheet" href="../../markdown.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../../markdown.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>2.8_模型要求的输入</h1>
+<pre><code>
+Lecture: 02_投资组合的构建和分析/2.8_模型要求的输入
+Content: 2.8_模型要求的输入
+
+</code></pre>
+<h3>2.8 模型要求的输入</h3>
+<h4>概述</h4>
+<p>为了在投资组合构建中利用马考维茨的全协方差模型，投资者需要获取感兴趣的证券的回报率、方差以及两者间的协方差的估计。这些估计是构建和优化投资组合的关键输入。以下详细分析了模型要求的输入内容及其计算方法。</p>
+<h4>模型输入的种类</h4>
+<ol>
+<li><strong>回报率（Returns）</strong>：每个证券的预期回报率是模型的基础输入之一。它反映了投资者对未来收益的预期。</li>
+<li><strong>方差（Variance）</strong>：每个证券回报率的方差表示其波动性，是风险的度量标准之一。</li>
+<li><strong>协方差（Covariance）</strong>：不同证券回报率之间的协方差反映了它们之间的相关性，是投资组合风险计算的重要部分。</li>
+</ol>
+<h4>输入数据的数量</h4>
+<p>对于仅由两只股票构成的投资组合，要估计其期望回报率和回报率的方差，需要五个估计值：每只股票的期望回报率、每只股票回报率的方差以及两只股票回报率的协方差。</p>
+<p>将这一结果推广到由 $N$ 只股票组成的投资组合，需要的估计值如下：</p>
+<ul>
+<li>$N$ 个回报率估计</li>
+<li>$N$ 个方差估计</li>
+<li>$N(N-1)/2$ 个协方差估计</li>
+</ul>
+<p>总共需要 $2N + N(N-1)/2$ 个估计值。例如，若分析由 200 只股票构成的投资组合，则需要：</p>
+<ul>
+<li>200 个回报率估计</li>
+<li>200 个方差估计</li>
+<li>19900 个协方差估计</li>
+</ul>
+<p>总共进行 20300 个估计。</p>
+<h4>估计任务的显著增加</h4>
+<p>估计任务的显著增加主要是因为要明确地考虑证券间以协方差表示的相关性。表 2-8 表明了输入的估计数目如何随被选择的总体大小而变化。</p>
+<h4>数据估计的具体方法</h4>
+<ol>
+<li><strong>历史数据法</strong>：利用证券的历史回报率数据，计算其期望回报率、方差和协方差。这种方法依赖于假设历史数据能代表未来表现。</li>
+<li><strong>市场数据法</strong>：利用当前市场数据和经济指标，结合模型预测未来的回报率、方差和协方差。</li>
+<li><strong>专家预测法</strong>：结合行业专家的预测和市场分析，估计证券的未来回报率、方差和协方差。</li>
+</ol>
+<h4>表 2-8 示例</h4>
+<p>假设要分析的股票数为 $N$，则需要的估计值数量如下：</p>
+<table>
+<thead>
+<tr>
+<th>股票数 ($N$)</th>
+<th>回报率估计</th>
+<th>方差估计</th>
+<th>协方差估计</th>
+<th>总估计数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>45</td>
+<td>65</td>
+</tr>
+<tr>
+<td>20</td>
+<td>20</td>
+<td>20</td>
+<td>190</td>
+<td>230</td>
+</tr>
+<tr>
+<td>50</td>
+<td>50</td>
+<td>50</td>
+<td>1225</td>
+<td>1325</td>
+</tr>
+<tr>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>4950</td>
+<td>5150</td>
+</tr>
+<tr>
+<td>200</td>
+<td>200</td>
+<td>200</td>
+<td>19900</td>
+<td>20300</td>
+</tr>
+</tbody>
+</table>
+<h4>结论</h4>
+<p>在投资组合的构建过程中，准确估计证券的回报率、方差和协方差是至关重要的。随着投资组合中证券数量的增加，所需的估计值数量也显著增加，这对数据处理和计算能力提出了更高的要求。通过合理选择和估计这些输入值，可以帮助投资者构建更加优化和有效的投资组合。</p>
+
+    <h3>Python 文件</h3>
+    <pre><code>对应的 Python 文件不存在。</code></pre>
+  </div>
+</body>
+</html>
+  
